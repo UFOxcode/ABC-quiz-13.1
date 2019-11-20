@@ -15,6 +15,8 @@
 		07AF8F42238589580049B5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AF8F40238589580049B5A0 /* LaunchScreen.storyboard */; };
 		07AF8F4D238589580049B5A0 /* ABC_quizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF8F4C238589580049B5A0 /* ABC_quizTests.swift */; };
 		07AF8F58238589580049B5A0 /* ABC_quizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF8F57238589580049B5A0 /* ABC_quizUITests.swift */; };
+		07AF8F6623858DB00049B5A0 /* QFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF8F6523858DB00049B5A0 /* QFormat.swift */; };
+		07AF8F6823858DC70049B5A0 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF8F6723858DC70049B5A0 /* QuizBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		07AF8F53238589580049B5A0 /* ABC quizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ABC quizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AF8F57238589580049B5A0 /* ABC_quizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABC_quizUITests.swift; sourceTree = "<group>"; };
 		07AF8F59238589580049B5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07AF8F6523858DB00049B5A0 /* QFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFormat.swift; sourceTree = "<group>"; };
+		07AF8F6723858DC70049B5A0 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				07AF8F37238589570049B5A0 /* SceneDelegate.swift */,
 				07AF8F39238589570049B5A0 /* ViewController.swift */,
 				07AF8F3B238589570049B5A0 /* Main.storyboard */,
+				07AF8F6523858DB00049B5A0 /* QFormat.swift */,
+				07AF8F6723858DC70049B5A0 /* QuizBrain.swift */,
 				07AF8F3E238589580049B5A0 /* Assets.xcassets */,
 				07AF8F40238589580049B5A0 /* LaunchScreen.storyboard */,
 				07AF8F43238589580049B5A0 /* Info.plist */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AF8F6823858DC70049B5A0 /* QuizBrain.swift in Sources */,
 				07AF8F3A238589570049B5A0 /* ViewController.swift in Sources */,
 				07AF8F36238589570049B5A0 /* AppDelegate.swift in Sources */,
+				07AF8F6623858DB00049B5A0 /* QFormat.swift in Sources */,
 				07AF8F38238589570049B5A0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
