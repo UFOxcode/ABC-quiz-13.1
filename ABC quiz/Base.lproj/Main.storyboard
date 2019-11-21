@@ -67,7 +67,7 @@
                                 <rect key="frame" x="9" y="682" width="385" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -79,6 +79,7 @@
                         <outlet property="choice2" destination="grG-gH-uuR" id="JS3-Rc-6eI"/>
                         <outlet property="choice3" destination="Bgg-ld-Ulu" id="vz3-GN-Wyw"/>
                         <outlet property="choice4" destination="Q9D-IF-Ukx" id="I4v-8A-wRK"/>
+                        <outlet property="noteLabel" destination="eyc-Li-4Ar" id="IUs-6i-jeI"/>
                         <outlet property="qLabel" destination="TGJ-Bx-QBH" id="4uU-TE-48T"/>
                     </connections>
                 </viewController>
