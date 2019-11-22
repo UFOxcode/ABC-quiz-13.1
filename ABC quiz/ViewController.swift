@@ -20,11 +20,14 @@ class ViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     
-    
+    @IBOutlet var progressBar: UIView!
+    var i = 0
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
         
         updateUI()
     }
