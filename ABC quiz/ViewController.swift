@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var qLabel: UILabel!
@@ -29,8 +29,11 @@ class ViewController: UIViewController {
     
     var i = 0
     
-// .. //
-    let shapeLayer = CAShapeLayer()
+    //把 聲音 synthe。拉到上面才可以控制 隨時停。。 真的    👍讚👍 👍
+       let synthesizer = AVSpeechSynthesizer()
+    
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +43,33 @@ class ViewController: UIViewController {
         updateUI()
     }
 
+    fileprivate func speakOut(feedback : String) {
+        
+//        let synthesizer = AVSpeechSynthesizer()
+        // 放在裡面就無法停止。。。。👍
+        synthesizer.pauseSpeaking(at: .immediate)
+        synthesizer.stopSpeaking(at: .immediate)
+        
+        let utterance = AVSpeechUtterance(string: feedback)
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+        
+        synthesizer.speak(utterance)
+    }
+    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         let pickAnswer = sender.currentTitle!
         let isCorrect = quizBrain.checkAnswer(pickAnswer: pickAnswer)
         
+        
         if isCorrect {
 //            print(" GOOD job")
             noteLabel.text = " 答對了!下一題"
+            
+            speakOut(feedback: "答對了")
+            
+            
+            
             noteLabel.backgroundColor = UIColor.green
             qLabel.backgroundColor = UIColor.green
             sender.backgroundColor = UIColor.yellow
@@ -59,12 +81,23 @@ class ViewController: UIViewController {
         } else {
 //            print("Wrong")
             noteLabel.text = "答錯了，再試試！"
+            
+            speakOut(feedback: "答錯了")
+            
+
+            
+            
             noteLabel.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
             sender.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
             
         }
+        
+        if questionIndex == 10 {
+            print("10題 結束，跳 下一頁")
+        }
         questionIndex += 1
+        
         quizBrain.nextQuestion()
         
     }
@@ -92,48 +125,11 @@ class ViewController: UIViewController {
         choice4.setTitle(aChoice[3], for: .normal)
         scoreLabel.text = "真確問題-共\(totalQuestion) 題，現在是第 \(questionIndex) 題, 答對題數：\(quizBrain.getScore()) 。"
         
+        speakOut(feedback: quizBrain.getQuestionText())
+        
         }
 
-    func circleLine () {
-        
-        let center = view.center
-        let circularPath = UIBezierPath(arcCenter: center, radius: 120, startAngle: -CGFloat.pi/2 , endAngle: 2 * CGFloat.pi, clockwise: true)
-        shapeLayer.path = circularPath.cgPath
-        
-        //加顏色，線條顏色
-        shapeLayer.strokeColor = UIColor.lightGray.cgColor
-        shapeLayer.lineWidth = 14
-        
-        //加這行 起頭比較圓一點。。。  唉。
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
-        
-        // add line to clear color of circle
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        
-        
-        shapeLayer.strokeEnd = 0
-        
-        
-        view.layer.addSublayer(shapeLayer)
-     
-     
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        
-        basicAnimation.toValue = 1
-        
-        basicAnimation.duration = 5
-        
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "urSoBasic")
+   
         
         
     }
-
-
-
-
-
-}
-
