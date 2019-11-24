@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     fileprivate func speakOut(feedback : String) {
         
 //        let synthesizer = AVSpeechSynthesizer()
-        // 放在裡面就無法停止。。。。👍
+        // 放在裡面就無法停止。。。。👍， 要 同一個 syn 才可以控制。。
         synthesizer.pauseSpeaking(at: .immediate)
         synthesizer.stopSpeaking(at: .immediate)
         
