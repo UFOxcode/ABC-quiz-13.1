@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var qLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var choice1: UIButton!
     @IBOutlet weak var choice2: UIButton!
@@ -23,12 +24,14 @@ class ViewController: UIViewController {
     @IBOutlet var progressBar: UIView!
     var i = 0
     
+// .. //
+    let shapeLayer = CAShapeLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
       
-        
+//        circleLine()
         updateUI()
     }
 
@@ -70,10 +73,50 @@ class ViewController: UIViewController {
         choice2.setTitle(aChoice[1], for: .normal)
         choice3.setTitle(aChoice[2], for: .normal)
         choice4.setTitle(aChoice[3], for: .normal)
+        scoreLabel.text = "分數： \(quizBrain.getScore())"
+        
+        }
+
+    func circleLine () {
+        
+        let center = view.center
+        let circularPath = UIBezierPath(arcCenter: center, radius: 120, startAngle: -CGFloat.pi/2 , endAngle: 2 * CGFloat.pi, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        
+        //加顏色，線條顏色
+        shapeLayer.strokeColor = UIColor.lightGray.cgColor
+        shapeLayer.lineWidth = 14
+        
+        //加這行 起頭比較圓一點。。。  唉。
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        
+        // add line to clear color of circle
+        shapeLayer.fillColor = UIColor.clear.cgColor
         
         
+        shapeLayer.strokeEnd = 0
+        
+        
+        view.layer.addSublayer(shapeLayer)
+     
+     
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        basicAnimation.toValue = 1
+        
+        basicAnimation.duration = 5
+        
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "urSoBasic")
         
         
     }
+
+
+
+
+
 }
 

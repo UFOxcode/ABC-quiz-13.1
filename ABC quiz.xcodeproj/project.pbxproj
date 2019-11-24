@@ -52,7 +52,7 @@
 		07AF8F57238589580049B5A0 /* ABC_quizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABC_quizUITests.swift; sourceTree = "<group>"; };
 		07AF8F59238589580049B5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07AF8F6523858DB00049B5A0 /* QFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFormat.swift; sourceTree = "<group>"; };
-		07AF8F6723858DC70049B5A0 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		07AF8F6723858DC70049B5A0 /* QuizBrain.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
