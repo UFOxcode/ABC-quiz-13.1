@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var qLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    
     
     @IBOutlet weak var choice1: UIButton!
     @IBOutlet weak var choice2: UIButton!
@@ -21,7 +24,9 @@ class ViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     
-    @IBOutlet var progressBar: UIView!
+    var totalQuestion = 10
+    var questionIndex = 1
+    
     var i = 0
     
 // .. //
@@ -29,7 +34,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        progressBar.progress = 0.0
       
 //        circleLine()
         updateUI()
@@ -45,7 +50,9 @@ class ViewController: UIViewController {
             noteLabel.text = " 答對了!下一題"
             noteLabel.backgroundColor = UIColor.green
             qLabel.backgroundColor = UIColor.green
-            quizBrain.nextQuestion()
+            sender.backgroundColor = UIColor.yellow
+            
+            
             
             Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
             
@@ -53,11 +60,12 @@ class ViewController: UIViewController {
 //            print("Wrong")
             noteLabel.text = "答錯了，再試試！"
             noteLabel.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+            
         }
-        
-        
-        
+        questionIndex += 1
+        quizBrain.nextQuestion()
         
     }
    
@@ -65,15 +73,24 @@ class ViewController: UIViewController {
     
     @objc func updateUI(){
         qLabel.backgroundColor = UIColor.clear
-        noteLabel.text = "請選答案"
         noteLabel.backgroundColor = UIColor.clear
+        choice1.backgroundColor = UIColor.green
+        choice2.backgroundColor = UIColor.green
+        choice3.backgroundColor = UIColor.green
+        choice4.backgroundColor = UIColor.green
+        
+        progressBar.progress = Float(questionIndex) / Float(totalQuestion)
+        
+        
+        
+        noteLabel.text = "請選答案"
         qLabel.text = quizBrain.getQuestionText()
         let aChoice = quizBrain.getAnswers()
         choice1.setTitle(aChoice[0], for: .normal)
         choice2.setTitle(aChoice[1], for: .normal)
         choice3.setTitle(aChoice[2], for: .normal)
         choice4.setTitle(aChoice[3], for: .normal)
-        scoreLabel.text = "分數： \(quizBrain.getScore())"
+        scoreLabel.text = "真確問題-共\(totalQuestion) 題，現在是第 \(questionIndex) 題, 答對題數：\(quizBrain.getScore()) 。"
         
         }
 

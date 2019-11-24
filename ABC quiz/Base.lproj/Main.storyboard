@@ -34,12 +34,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES2-cx-RcR">
-                                                <rect key="frame" x="8" y="178" width="145" height="87"/>
+                                                <rect key="frame" x="8" y="178" width="398" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-pU-pWc">
+                                                <rect key="frame" x="8" y="156" width="398" height="3"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -79,19 +84,19 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="srS-sl-k1R">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="132.33333333333334"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-st-WVg">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-st-WVg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="203" height="132.33333333333334"/>
                                                                 <color key="backgroundColor" red="0.42745098039215684" green="0.92549019607843142" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                                 <state key="normal" title="A"/>
                                                                 <connections>
                                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ha1-KY-2z8"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grG-gH-uuR">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="grG-gH-uuR">
                                                                 <rect key="frame" x="211" y="0.0" width="203" height="132.33333333333334"/>
                                                                 <color key="backgroundColor" red="0.42745098039215684" green="0.92549019607843142" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                                 <state key="normal" title="B"/>
                                                                 <connections>
                                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqJ-Uf-NFx"/>
@@ -102,19 +107,19 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-0Y-MmN">
                                                         <rect key="frame" x="0.0" y="140.33333333333326" width="414" height="132.33333333333337"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgg-ld-Ulu">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bgg-ld-Ulu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="203" height="132.33333333333334"/>
                                                                 <color key="backgroundColor" red="0.42745098039215684" green="0.92549019607843142" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                                 <state key="normal" title="C"/>
                                                                 <connections>
                                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ucv-N3-RfS"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-IF-Ukx">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-IF-Ukx">
                                                                 <rect key="frame" x="211" y="0.0" width="203" height="132.33333333333334"/>
                                                                 <color key="backgroundColor" red="0.42745098039215684" green="0.92549019607843142" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                                 <state key="normal" title="D"/>
                                                                 <connections>
                                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8tS-VC-XNk"/>
@@ -162,7 +167,7 @@
                         <outlet property="choice3" destination="Bgg-ld-Ulu" id="vz3-GN-Wyw"/>
                         <outlet property="choice4" destination="Q9D-IF-Ukx" id="I4v-8A-wRK"/>
                         <outlet property="noteLabel" destination="eyc-Li-4Ar" id="IUs-6i-jeI"/>
-                        <outlet property="progressBar" destination="8bC-Xf-vdC" id="u0k-nu-9aP"/>
+                        <outlet property="progressBar" destination="kJZ-pU-pWc" id="gDN-4r-NE9"/>
                         <outlet property="qLabel" destination="TGJ-Bx-QBH" id="4uU-TE-48T"/>
                         <outlet property="scoreLabel" destination="ES2-cx-RcR" id="xNB-xP-L6U"/>
                     </connections>
